@@ -1,7 +1,38 @@
 # Stroke Prediction using Random Forest
 
 ## Overview
-This project focuses on predicting the likelihood of a stroke based on patient health data using a **Random Forest model**. The dataset includes various health indicators such as age, hypertension, heart disease, and more.
+This project aims to predict whether a patient has experienced a stroke based on health-related features. A Random Forest classifier is used for classification. The pipeline includes the following steps:
+
+1. Data Preprocessing:
+    Handling Missing Data: Missing values in the bmi column are handled using different techniques:
+    
+    Dropping rows with missing values.
+    
+    Imputing missing values using the mean of the column.
+    
+    Imputing using K-Nearest Neighbors (KNN) for better accuracy.
+    
+    One-Hot Encoding: Categorical features, such as smoking_status, are converted into numerical values using one-hot encoding.
+
+2. Feature Engineering:
+    Class Imbalance: SMOTE is applied to generate synthetic samples for the minority class (stroke cases), addressing the class imbalance.
+
+    Feature Selection: All features are used except for the target variable (stroke) and bmi.
+
+3. Model Training & Evaluation:
+    Model: A Random Forest classifier is trained on the processed data.
+    
+    Evaluation: The model is evaluated using confusion matrices and classification reports, with performance metrics like precision, recall,        and F1-score.
+
+4. Key Steps:
+    Data Cleaning: Missing values are imputed (using mean, KNN, or dropped).
+    
+    SMOTE: Applied to handle class imbalance.
+    
+    Modeling: A Random Forest classifier is trained and evaluated.
+
+5. Final Outcome:
+    The project provides a complete pipeline for stroke prediction, including data preprocessing, model training, and performance evaluation.
 
 ## Dataset
 - **File:** `healthcare-dataset-stroke-data.csv`
@@ -35,9 +66,14 @@ This project focuses on predicting the likelihood of a stroke based on patient h
       python stroke_prediction.py
 
 ## Results & Performance
-The model is evaluated using accuracy, confusion matrix, and classification reports.
+ - The Random Forest model is highly effective in predicting stroke occurrences with an impressive accuracy rate of 96-97%.
+  
+ - The handling of missing data using different imputation methods (mean, KNN, and dropping) did not drastically affect the performance, indicating that the model is robust to various preprocessing strategies.
+  
+ - Class imbalance was successfully addressed using SMOTE, which helped improve model performance in predicting the minority class (stroke cases).
+  
+ - This project highlights the importance of data preprocessing and model tuning in achieving high accuracy in real-world predictive tasks.
 
-Key performance metrics and visualizations are generated for better understanding.
 
 ## Technologies Used
 Python
