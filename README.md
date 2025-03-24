@@ -24,7 +24,7 @@ This project focuses on predicting the likelihood of a stroke based on patient h
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/o-mariam/Healthcare_Stroke_Prediction
    cd stroke-prediction
 2. Set up a Python virtual environment (optional but recommended):
 
